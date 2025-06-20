@@ -68,6 +68,51 @@ class lokalcontroller extends Controller
         return redirect(route('lokal.index'))->with('success', 'Data kelas berhasil ditambahkan dan level user diperbarui menjadi walikelas');
     }
 
+    public function edit($id)
+    {
+        $lokal = lokal::findOrFail($id);
+        $jurusan = jurusan::all();
+        $guru = guru::all();
+
+        return view('admin.lokal.edit', [
+            'menu' => 'lokal',
+            'title' => 'Tambah Data Kelas',
+            'guru' => $guru,
+            'lokal' => $lokal,
+            'jurusan' => $jurusan,
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validasi = $request->validate([
+            'nama' => 'required',
+            'jurusan_id' => 'required',
+            'guru_id' => 'required'
+        ], [
+            'nama.required' => 'Angkatan harus dipilih',
+            'jurusan_id.required' => 'Jurusan harus dipilih',
+            'guru_id.required' => 'Wali kelas harus dipilih'
+        ]);
+
+        $lokal = Lokal::findOrFail($id);
+        $jurusan = Jurusan::find($validasi['jurusan_id']);
+
+        if (!$jurusan) {
+            return back()->withErrors(['jurusan_id' => 'Jurusan tidak ditemukan']);
+        }
+
+        $nama_kelas = $validasi['nama'] . ' ' . $jurusan->kode_jurusan;
+
+        $lokal->nama = $nama_kelas;
+        $lokal->jurusan_id = $validasi['jurusan_id'];
+        $lokal->guru_id = $validasi['guru_id'];
+        $lokal->save();
+
+        return redirect(route('lokal.index'))->with('success', 'Data kelas berhasil diperbarui.');
+    }
+
+
     public function show($id)
     {
         $lokal = lokal::with(['jurusan', 'guru'])->findOrFail($id);
@@ -76,5 +121,15 @@ class lokalcontroller extends Controller
             'title' => 'Detail Data Kelas',
             'lokal' => $lokal
         ]);
+    }
+
+    public function destroy($id)
+    {
+        $lokal = lokal::findOrFail($id);
+
+        // Hapus data guru dan user
+        $lokal->delete();
+
+        return redirect(route('lokal.index'))->with('success', 'Data kelas berhasil dihapus');
     }
 }
