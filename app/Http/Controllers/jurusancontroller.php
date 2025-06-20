@@ -73,4 +73,14 @@ class jurusancontroller extends Controller
 
         return redirect(route('jurusan.index'));
     }
+
+    public function destroy($id)
+    {
+        $jurusan = jurusan::findOrFail($id);
+
+        // Hapus data guru dan user
+        $jurusan->delete();
+
+        return redirect(route('jurusan.index'))->with('success', 'Data jurusan berhasil dihapus');
+    }
 }

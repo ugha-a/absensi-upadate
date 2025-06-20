@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="{{ asset('assets/dist/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dist/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dist/css/app.css') }}">
-   <link rel="shortcut icon" href="{{asset('assets/dist/images/logo/logio.png')}}" type="image/x-icon">
-   
+    <link rel="shortcut icon" href="{{ asset('assets/dist/images/logo/logio.png') }}" type="image/x-icon">
+
     <style>
         body {
             background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
@@ -36,41 +36,44 @@
         }
 
         .dashboard .card-icon {
-            width: 48px;
-            height: 48px;
-            font-size: 2rem;
-            background: #f1f5f9;
-            margin-right: 12px;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
+            padding-bottom: 12px;
+            padding-right: 10px;
+            /* align-self: : center; */
             justify-content: center;
+            color: #fff;
         }
 
         /* Icon warna berbeda */
-        .dashboard .card-icon .bi-person-badge {
-            color: #6366f1;
+        .card-icon.bg-primary {
+            background-color: #6366f1 !important;
         }
 
-        .dashboard .card-icon .bi-person-lines-fill {
-            color: #10b981;
+        .card-icon.bg-success {
+            background-color: #10b981 !important;
         }
 
-        .dashboard .card-icon .bi-door-open {
-            color: #f59e42;
+        .card-icon.bg-warning {
+            background-color: #f59e42 !important;
         }
 
-        .dashboard .card-icon .bi-diagram-3 {
-            color: #f43f5e;
+        .card-icon.bg-danger {
+            background-color: #f43f5e !important;
         }
 
-        .dashboard .card-icon .bi-briefcase-fill {
-            color: #0ea5e9;
+        .card-icon.bg-info {
+            background-color: #0ea5e9 !important;
         }
 
-        .dashboard .card-icon .bi-clipboard-check {
-            color: #a21caf;
+        .card-icon.bg-purple {
+            background-color: #a21caf !important;
         }
+
 
         .dashboard h5.card-title {
             font-weight: 700;
@@ -87,8 +90,15 @@
         .dashboard .text-muted {
             color: #64748b !important;
         }
+
+        .bg-purple {
+            background-color: #a21caf !important;
+            color: #fff;
+        }
     </style>
     @yield('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
 </head>
 
 <body>
@@ -99,26 +109,15 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
                             <div class="d-flex align-items-center">
-                                <img
-                                    src="{{ asset('assets/dist/images/logo/logo-app.png') }}" alt="Logo"
+                                <img src="{{ asset('assets/dist/images/logo/logo-app.png') }}" alt="Logo"
                                     style="width: 250px; height: 60px;">
                             </div>
 
                         </div>
-                        {{-- <div class="dropdown">
-                            <a href="#" class="btn p-0" id="logoutMenu" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="fa fa-ellipsis-v fa-lg"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="logoutMenu">
-                                <li>
-
-                                </li>
-                            </ul>
-                        </div> --}}
                         <div class="toggler">
-                            <a href="#" class="sidebar-hide d-xl-none d-block"><i
-                                    class="bi bi-x bi-middle"></i></a>
+                            <a href="#" class="sidebar-hide d-xl-none d-block">
+                                <i class="bi bi-x bi-middle"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
