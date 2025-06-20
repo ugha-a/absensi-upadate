@@ -104,28 +104,15 @@
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div class="logo">
-                            <div class="d-flex align-items-center">
-                                <img class="img-error rounded-circle me-2"
-                                    src="{{ asset('assets/dist/images/logo/logio.png') }}" alt="Logo"
-                                    style="width: 60px; height: 60px;">
-                            </div>
-
+                        <div class="logo d-flex align-items-center overflow-hidden" style="max-width: 100%;">
+                            <img class="img-error rounded-circle me-2"
+                                src="{{ asset('assets/dist/images/logo/logio.png') }}" alt="Logo"
+                                style="width: 60px; height: 60px; object-fit: cover;">
                         </div>
-                        {{-- <div class="dropdown">
-                            <a href="#" class="btn p-0" id="logoutMenu" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="fa fa-ellipsis-v fa-lg"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="logoutMenu">
-                                <li>
-
-                                </li>
-                            </ul>
-                        </div> --}}
                         <div class="toggler">
-                            <a href="#" class="sidebar-hide d-xl-none d-block"><i
-                                    class="bi bi-x bi-middle"></i></a>
+                            <a href="#" class="sidebar-hide d-xl-none d-block">
+                                <i class="bi bi-x bi-middle"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
