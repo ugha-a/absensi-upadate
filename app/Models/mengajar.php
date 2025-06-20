@@ -14,11 +14,11 @@ class mengajar extends Model
 
     public function guru()
     {
-        return $this->belongsTo(Guru::class, 'guru_id');
+        return $this->belongsTo(guru::class, 'guru_id');
     }
 
     public function mapel()
     {
-        return $this->belongsTo(Mapel::class, 'mapel_id');
+        return $this->belongsTo(mapel::class, 'mapel_id');
     }
 }

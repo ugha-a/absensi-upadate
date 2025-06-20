@@ -17,11 +17,11 @@ class absensi extends Model
 
     public function guru()
     {
-        return $this->belongsTo(Guru::class, 'guru_id');
+        return $this->belongsTo(guru::class, 'guru_id');
     }
 
     public function siswa()
     {
-        return $this->belongsTo(Siswa::class, 'siswa_id');
+        return $this->belongsTo(siswa::class, 'siswa_id');
     }
 }

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('assets/dist/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dist/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dist/css/app.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/dist/images/favicon.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/dist/images/logo/logio.png')}}" type="image/x-icon">
     @yield('css')
 </head>
 
@@ -28,10 +28,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
                             <div class="d-flex align-items-center">
-                                <img class="img-error rounded-circle me-2"
-                                    src="{{ asset('assets/dist/images/logo/logio.png') }}" alt="Logo"
-                                    style="width: 60px; height: 60px;">
-                                {{-- <h1 class="text-blue mb-0" style="font-size: 1.2rem;">Tukang Absen</h1> --}}
+                                <img src="{{ asset('assets/dist/images/logo/logo-app.png') }}" alt="Logo" style="width: 250px; height: 60px;">
                             </div>
 
                         </div>

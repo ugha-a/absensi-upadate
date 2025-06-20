@@ -19,18 +19,18 @@ class lokal extends Model
     // Relasi ke model Jurusan
     public function jurusan()
     {
-        return $this->belongsTo(Jurusan::class, 'jurusan_id');
+        return $this->belongsTo(jurusan::class, 'jurusan_id');
     }
 
     // Relasi ke model Jurusan
     public function guru()
     {
-        return $this->belongsTo(Guru::class, 'guru_id');
+        return $this->belongsTo(guru::class, 'guru_id');
     }
 
     // Relasi ke model Jadwal
     public function jadwals()
     {
-        return $this->hasMany(Jadwal::class, 'lokal_id');
+        return $this->hasMany(jadwal::class, 'lokal_id');
     }
 }

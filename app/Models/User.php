@@ -49,11 +49,11 @@ class User extends Authenticatable
 
     public function guru()
     {
-        return $this->hasOne(Guru::class, 'user_id');
+        return $this->hasOne(guru::class, 'user_id');
     }
 
     public function siswa()
     {
-        return $this->hasOne(Siswa::class, 'user_id');
+        return $this->hasOne(siswa::class, 'user_id');
     }
 }

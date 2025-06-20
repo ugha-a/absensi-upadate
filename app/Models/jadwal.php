@@ -13,11 +13,11 @@ class jadwal extends Model
 
     public function lokal()
     {
-        return $this->belongsTo(Lokal::class, 'lokal_id');
+        return $this->belongsTo(lokal::class, 'lokal_id');
     }
 
     public function mapel()
     {
-        return $this->belongsTo(Mapel::class, 'mapel_id');
+        return $this->belongsTo(mapel::class, 'mapel_id');
     }
 }

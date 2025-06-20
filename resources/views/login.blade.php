@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="{{ asset('assets/dist/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dist/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dist/css/pages/auth.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/dist/images/logo/logio.png') }}" type="image/x-icon">
     <style>
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Nunito', sans-serif,Georgia;
             background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
             min-height: 100vh;
         }
@@ -63,9 +64,8 @@
         }
 
         .auth-title {
-            font-weight: 700;
-            color: #2575fc;
-            font-size: 0.85rem;
+            font-weight: 500;
+            color: #3b82f6;
             letter-spacing: 1px;
             margin-bottom: 1.2rem;
             margin-top: 0.5rem;
@@ -114,7 +114,7 @@
         }
 
         .font-bold {
-            font-weight: 700;
+            font-weight: 500;
             color: #6a11cb !important;
         }
 
@@ -126,10 +126,6 @@
             font-size: 1rem;
         }
 
-        .fs-5 {
-            font-size: 0.98rem !important;
-        }
-
         #auth-right {
             height: 100vh;
             overflow: hidden;
@@ -139,8 +135,6 @@
         #auth-right img {
             width: 100%;
             height: 100vh;
-            object-fit: cover;
-            object-position: center;
             border-radius: 1.2rem 0 0 1.2rem;
             /* biar seamless */
             box-shadow: none;
@@ -165,11 +159,6 @@
                 border-radius: 0.7rem;
                 margin: 0.5rem;
                 min-height: 100vh;
-            }
-
-            .auth-title {
-                font-size: 0.98rem;
-                margin-bottom: 1.1rem;
             }
         }
 
@@ -270,7 +259,10 @@
                             style="width: 150px; height: 150px; object-fit: cover;">
                     </div>
 
-                    <p class="auth-title animate-fadein">Log in</p>
+                   <div class="text-center pt-4 mb-2">
+                        <h2 class="h3 text-center title-login">Selamat Datang Kembali 👋</h2>
+                        <p>Masukkan data anda untuk masuk ke aplikasi kami!</p>
+                   </div>
 
                     @if (session()->has('loginError'))
                         <div class="alert alert-danger alert-dismissible fade show animate-shake" role="alert">
@@ -281,7 +273,8 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('auth') }}" method="POST">
+                    <div class="container">
+                        <form action="{{ route('auth') }}" method="POST">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text"
@@ -317,13 +310,8 @@
                         <button type="submit"
                             class="btn btn-primary btn-block btn-lg shadow-lg w-100 animate-button">Log in</button>
                     </form>
-
-                    <div class="text-center mt-4 fs-5 animate-fadein-delayed">
-                        <p class="text-gray-600">
-                            Don't have an account?
-                            <a href="{{ url('up') }}" class="font-bold">Sign up</a>.
-                        </p>
                     </div>
+
                 </div>
             </div>
 

@@ -13,11 +13,11 @@ class mapel extends Model
 
     public function jadwals()
     {
-        return $this->hasMany(Jadwal::class, 'mapel_id');
+        return $this->hasMany(jadwal::class, 'mapel_id');
     }
 
     public function mengajars()
     {
-        return $this->hasMany(Mengajar::class, 'mapel_id');
+        return $this->hasMany(mengajar::class, 'mapel_id');
     }
 }

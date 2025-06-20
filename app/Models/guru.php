@@ -36,12 +36,12 @@ class Guru extends Authenticatable
 
     public function lokals()
     {
-        return $this->hasMany(Lokal::class, 'guru_id');
+        return $this->hasMany(lokal::class, 'guru_id');
     }
 
     public function mengajars()
     {
-        return $this->hasMany(Mengajar::class, 'guru_id');
+        return $this->hasMany(mengajar::class, 'guru_id');
     }
 
     public function absensis()

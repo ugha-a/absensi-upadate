@@ -41,6 +41,6 @@ class Siswa extends Authenticatable
 
     public function lokal()
 {
-    return $this->belongsTo(Lokal::class, 'lokal_id');
+    return $this->belongsTo(lokal::class, 'lokal_id');
 }
 }
