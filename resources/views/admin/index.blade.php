@@ -1,25 +1,23 @@
 @extends('template-admin.layout')
+
 @section('title', 'Dashboard Admin')
+
 @section('header-content')
-<h1>Dashboard</h1>
-<!--  -->
+    <h1>Dashboard</h1>
 @endsection
 
 @section('content')
-<section class="section dashboard">
-    <div class="row">
+    <section class="section dashboard d-flex justify-content-center">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
 
-        <!-- Left side columns -->
-        <div class="col-lg-12">
-            <div class="row">
-
-                <!-- Siswa -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card info-card sales-card">
+                {{-- Siswa --}}
+                <div class="col">
+                    <div class="card info-card shadow-sm border-0">
                         <div class="card-body">
-                            <h5 class="card-title">Siswa <span>| Today</span></h5>
+                            <h5 class="card-title">Siswa</h5>
                             <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-start align-self-start" style="font-size: 2rem;">
+                                <div class="card-icon bg-primary">
                                     <i class="bi bi-person-badge"></i>
                                 </div>
                                 <div class="ps-3">
@@ -31,13 +29,13 @@
                     </div>
                 </div>
 
-                <!-- Guru -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card info-card revenue-card">
+                {{-- Guru --}}
+                <div class="col">
+                    <div class="card info-card shadow-sm border-0">
                         <div class="card-body">
-                            <h5 class="card-title">Guru <span>| Today</span></h5>
+                            <h5 class="card-title">Guru</h5>
                             <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-start align-self-start" style="font-size: 2rem;">
+                                <div class="card-icon bg-success">
                                     <i class="bi bi-person-lines-fill"></i>
                                 </div>
                                 <div class="ps-3">
@@ -49,13 +47,13 @@
                     </div>
                 </div>
 
-                <!-- Kelas -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card info-card customers-card">
+                {{-- Kelas --}}
+                <div class="col">
+                    <div class="card info-card shadow-sm border-0">
                         <div class="card-body">
-                            <h5 class="card-title">Kelas <span>| Today</span></h5>
+                            <h5 class="card-title">Kelas</h5>
                             <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-start align-self-start" style="font-size: 2rem;">
+                                <div class="card-icon bg-warning">
                                     <i class="bi bi-door-open"></i>
                                 </div>
                                 <div class="ps-3">
@@ -67,13 +65,13 @@
                     </div>
                 </div>
 
-                <!-- Jurusan -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card info-card customers-card">
+                {{-- Jurusan --}}
+                <div class="col">
+                    <div class="card info-card shadow-sm border-0">
                         <div class="card-body">
-                            <h5 class="card-title">Jurusan <span>| Today</span></h5>
+                            <h5 class="card-title">Jurusan</h5>
                             <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-start align-self-start" style="font-size: 2rem;">
+                                <div class="card-icon bg-danger">
                                     <i class="bi bi-diagram-3"></i>
                                 </div>
                                 <div class="ps-3">
@@ -85,13 +83,13 @@
                     </div>
                 </div>
 
-                <!-- Guru Yang Mengajar -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card info-card customers-card">
+                {{-- Guru Mengajar --}}
+                <div class="col">
+                    <div class="card info-card shadow-sm border-0">
                         <div class="card-body">
-                            <h5 class="card-title">Guru Mengajar <span>| Today</span></h5>
+                            <h5 class="card-title">Guru Mengajar</h5>
                             <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-start align-self-start" style="font-size: 2rem;">
+                                <div class="card-icon bg-info">
                                     <i class="bi bi-briefcase-fill"></i>
                                 </div>
                                 <div class="ps-3">
@@ -103,13 +101,13 @@
                     </div>
                 </div>
 
-                <!-- Absen Siswa -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card info-card customers-card">
+                {{-- Absen Siswa --}}
+                <div class="col">
+                    <div class="card info-card shadow-sm border-0">
                         <div class="card-body">
-                            <h5 class="card-title">Absen Siswa <span>| Today</span></h5>
+                            <h5 class="card-title">Absen Siswa</h5>
                             <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-start align-self-start" style="font-size: 2rem;">
+                                <div class="card-icon bg-purple">
                                     <i class="bi bi-clipboard-check"></i>
                                 </div>
                                 <div class="ps-3">
@@ -122,8 +120,6 @@
                 </div>
 
             </div>
-        </div><!-- End Left side columns -->
-
-    </div>
-</section>
+        </div>
+    </section>
 @endsection

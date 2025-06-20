@@ -35,41 +35,44 @@
         }
 
         .dashboard .card-icon {
-            width: 48px;
-            height: 48px;
-            font-size: 2rem;
-            background: #f1f5f9;
-            margin-right: 12px;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
+            padding-bottom: 12px;
+            padding-right: 10px;
+            /* align-self: : center; */
             justify-content: center;
+            color: #fff;
         }
 
         /* Icon warna berbeda */
-        .dashboard .card-icon .bi-person-badge {
-            color: #6366f1;
+        .card-icon.bg-primary {
+            background-color: #6366f1 !important;
         }
 
-        .dashboard .card-icon .bi-person-lines-fill {
-            color: #10b981;
+        .card-icon.bg-success {
+            background-color: #10b981 !important;
         }
 
-        .dashboard .card-icon .bi-door-open {
-            color: #f59e42;
+        .card-icon.bg-warning {
+            background-color: #f59e42 !important;
         }
 
-        .dashboard .card-icon .bi-diagram-3 {
-            color: #f43f5e;
+        .card-icon.bg-danger {
+            background-color: #f43f5e !important;
         }
 
-        .dashboard .card-icon .bi-briefcase-fill {
-            color: #0ea5e9;
+        .card-icon.bg-info {
+            background-color: #0ea5e9 !important;
         }
 
-        .dashboard .card-icon .bi-clipboard-check {
-            color: #a21caf;
+        .card-icon.bg-purple {
+            background-color: #a21caf !important;
         }
+
 
         .dashboard h5.card-title {
             font-weight: 700;
@@ -85,6 +88,11 @@
 
         .dashboard .text-muted {
             color: #64748b !important;
+        }
+
+        .bg-purple {
+            background-color: #a21caf !important;
+            color: #fff;
         }
     </style>
     @yield('css')
